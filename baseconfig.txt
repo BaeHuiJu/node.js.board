@@ -1,0 +1,5 @@
+npm init
+npm install express --save
+npm install oracledb
+//ejs설치
+npm install ejs

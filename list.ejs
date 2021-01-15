@@ -1,0 +1,67 @@
+<%="currentPage is "+currentPage%></br>
+<%="totalRecord is "+totalRecord%></br>
+<%="pageSize is "+pageSize%></br>
+<%="totalPage is "+totalPage%></br>
+<%="blockSize is "+blockSize%></br>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>글쓰기</title>        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link type="text/css" rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <scirpt src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <table align="center" border="1px" width="90%" class="table table-hover">
+            <thead>
+                <caption>공지 게시판</caption>
+            </thead>  
+            <tbody>
+                <tr>
+                    <td width="5%">NO</td>
+                    <td width="15%">작성자</td>
+                    <td width="60%">제목</td>
+                    <td width="15%">작성일</td>
+                    <td width="5%">조회수</td>
+                </tr>
+                <% for(var i=0; i< pageSize; i++){ %>
+                <%if(num<1)break%>
+                <tr>
+                    <td><%=num %></td>
+                    <td><%=num %></td>
+                    <td><%=num %></td>
+                    <td><%=num %></td>
+                    <!-- <td>배희주</td>
+                    <td>PMO공지사항입니다.</td>
+                    <td>2021.01.15</td>
+                    <td>20</td> -->
+                </tr>
+                <%num--;%>
+                <%}%>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" align="center">
+                        <%if(firstPage-1 > 1){%>
+                        <a href="/list?currentPage=<%=firstPage-1%>">◀</a>
+                        <%}else{%>
+                        <a href="javascript:alert('처음페이지입니다.')">◀</a>
+                        <%}%>
+    
+                        <%for(var i=firstPage;i<= lastPage; i++){%>
+                        <%if(i>totalPage)break;%>
+                        <a <%if(currentPage == i){%>class="numStyle"<%}%> href="/list?currentPage=<%=i%>">[<%=i%>]</a>
+                        <%}%>
+                        <%if(lastPage+1 < totalPage){%>
+                        <a href="/list?currentPage=<%=lastPage+1%>">▶</a>
+                        <%}else{%>
+                        <a href="javascript:alert('마지막페이지입니다.')">▶</a>
+                        <%}%>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>    
+    </body>
+</html>

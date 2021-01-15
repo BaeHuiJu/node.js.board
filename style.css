@@ -1,0 +1,22 @@
+.wrapper{
+    width:300px;
+    border-radius:10px;
+    border:5px solid #FF9E11;
+    margin:auto;
+}
+.wrapper div{
+    text-align:center;
+}
+.wrapper input, textarea, button{
+    width:90%;
+}
+textarea{
+    height:250px;
+}
+a{
+    text-decoration: none;
+}
+.numStyle{
+    font-size: 25px;
+    color: #9b4f90;
+}

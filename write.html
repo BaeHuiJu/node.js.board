@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>글쓰기</title>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        <link type="text/css" rel="stylesheet" href="/user/css/dynatree-1.2.8.css">
+        <link rel="stylesheet" href="./style.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            function regist() {
+                form1.action="/regist"; //서버의 url
+                form1.submit();
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <form name="form1" method="post">
+                <div>
+                    <input type="text" name='writer'>
+                </div>
+                <div>
+                    <input type="text" name='title'>
+                </div>
+                <div>
+                    <textarea name='content'></textarea>
+                </div>
+                <div>
+                    <button onClick="regist()">글등록</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
